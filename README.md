@@ -14,3 +14,21 @@ https://markfloryan.github.io/advalgo_projects/requirements.html
 1) Executive Summary: https://docs.google.com/document/d/1_NnYsMi_02FXpwYzapc8alG_G4ykaGeHsiYMpPcrwyE/edit?usp=sharing
 2) Full Slides: https://docs.google.com/presentation/d/1rqsmGgvOE-nvB8b4f0yYVAUtz_yUyGSbv85R7gykwCw/edit?usp=sharing
 3) Short Slides: https://docs.google.com/presentation/d/1VNNF17z2klea9iWyMJYRGD9ZNaUnsUmtFoAi6jujlxs/edit?usp=sharing
+
+## Implementation
+
+These do not currently take input from the user as they are simply examples of an implementation of the data structure.
+They do, however, include sample cases to showcase their functionality.
+
+### C++
+Filename: PST.cpp
+
+How to run:
+- Make sure you have CMake installed
+```bash
+mkdir build
+cd build
+cmake ..
+make
+./pst
+```
