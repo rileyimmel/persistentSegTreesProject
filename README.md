@@ -22,7 +22,7 @@ They do, however, include sample cases to showcase their functionality. These sa
 program (ex. for C++, running ./pst will print out the results of the sample cases).
 
 ### C++
-**Filename:** PST.cpp
+**Filename:** PST.cpp </br>
 **Requirements:** C++ 11+ and CMake (make sure `cmake` is on your `$PATH`))
 
 ```bash
@@ -41,7 +41,6 @@ make
 ```
 
 ### Java
-
 **Filenames:** `Main.java`, `PST.java`, `Node.java`  
 **Requirements:** JDK 11+ (make sure `java` & `javac` are on your `$PATH`)
 
