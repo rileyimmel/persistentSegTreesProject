@@ -18,7 +18,8 @@ https://markfloryan.github.io/advalgo_projects/requirements.html
 ## Implementation
 
 These do not currently take input from the user as they are simply examples of an implementation of the data structure.
-They do, however, include sample cases to showcase their functionality.
+They do, however, include sample cases to showcase their functionality. These sample cases can be observed by running
+program (ex. for C++, running ./pst will print out the results of the sample cases).
 
 ### C++
 Filename: PST.cpp
