@@ -27,7 +27,7 @@ struct Node {
 Node *root[MAX];
 
 // Persistent Segment Tree class
-class PST1 {
+class PST {
     const int n;
     int version;
     int size;
@@ -98,7 +98,7 @@ class PST1 {
 
 public:
 
-    explicit PST1(const int n): n(n) {
+    explicit PST(const int n): n(n) {
         version = 0;
         size = 0;
     }
@@ -133,7 +133,7 @@ int main(){
     // ——— Example Case 0 (original) ———
     cout << "\033[1;33m=== Starting Example Case 0 ===\033[0m" << endl;
     ll a[] = {1, 2, 3, 4, 5};
-    PST1 S1(5);
+    PST S1(5);
     S1.construct(a);
     // version 0 in red
     cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{1, 2, 3, 4, 5}\033[0m" << endl;
@@ -149,7 +149,7 @@ int main(){
     // ——— Example Case 1 — all zeros, then update at the end ———
     cout << "\033[1;33m=== Starting Example Case 1 | All zeros, update at the end ===\033[0m" << endl;
     ll b[] = {0, 0, 0, 0};
-    PST1 S2(4);
+    PST S2(4);
     S2.construct(b);
     // version 0 in red
     cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{0, 0, 0, 0}\033[0m" << endl;
@@ -165,7 +165,7 @@ int main(){
     // ——— Example Case 2 — mix of positives & negatives ———
     cout << "\033[1;33m=== Starting Example Case 2 | Positives & Negatives ===\033[0m" << endl;
     ll d[] = {1, -1, 2, -2, 3};
-    PST1 S4(5);
+    PST S4(5);
     S4.construct(d);
     // version 0 in red
     cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{1, -1, 2, -2, 3}\033[0m" << endl;
@@ -181,7 +181,7 @@ int main(){
     // ——— Example Case 3 — four versions in one test ———
     cout << "\033[1;33m=== Starting Example Case 3 | A tree with 4 versions ===\033[0m" << endl;
     ll e[] = {10, 20, 30, 40};
-    PST1 S5(4);
+    PST S5(4);
     S5.construct(e);
     // version 0 in red
     cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{10, 20, 30, 40}\033[0m" << endl;
@@ -209,7 +209,7 @@ int main(){
     // ——— Example Case 4 — past vs. successor version queries ———
     cout << "\033[1;33m=== Starting Example Case 4 | Querying a past version ===\033[0m" << endl;
     ll f[] = {2, 4, 6, 8, 10};
-    PST1 S6(5);
+    PST S6(5);
     S6.construct(f);
     // version 0 in red
     cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{2, 4, 6, 8, 10}\033[0m" << endl;
