@@ -2,6 +2,7 @@
 For CS4501 Adv Algo at UVA. Persistent Segment Trees final project
 
 ## Requirments:
+https://markfloryan.github.io/advalgo_projects/requirements.html
 1) Executive Summary: 4-8 page description of everything that has been delivered in this packet / project.
 2) Implementation: In C++, Java, and Python. The code needs to be thoroughly commented.
 3) Instructional Slides: Two sets of instructional slides. The first, a thorough, well designed, informative slideset that briefly teach the topic to an advanced undergraduate audience (about one lecture or 10-15 slides in length). A second, shorter, set of slides will be submitted that will be used for your 10 minute presentation.
