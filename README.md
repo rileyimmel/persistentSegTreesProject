@@ -22,14 +22,34 @@ They do, however, include sample cases to showcase their functionality. These sa
 program (ex. for C++, running ./pst will print out the results of the sample cases).
 
 ### C++
-Filename: PST.cpp
+**Filename:** PST.cpp
+**Requirements:** C++ 11+ and CMake (make sure `cmake` is on your `$PATH`))
 
-How to run:
-- Make sure you have CMake installed
 ```bash
+# from the repo root
+cd Implementations/C++
+# create a build directory
 mkdir build
+# cd into it
 cd build
+# run cmake to generate the makefile
 cmake ..
+# build the project
 make
+# run the demo
 ./pst
 ```
+
+### Java
+
+**Filenames:** `Main.java`, `PST.java`, `Node.java`  
+**Requirements:** JDK 11+ (make sure `java` & `javac` are on your `$PATH`)
+
+```bash
+# from the repo root
+cd Implementations/Java
+# compile all sources
+javac *.java
+# run the demo
+java Main
+
