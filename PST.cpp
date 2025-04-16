@@ -83,12 +83,16 @@ class PST {
 
     // Private query function
     ll query(const Node* node, const int l, const int r, const int ql, const int qr) {
+        // indices are oob
         if (l > qr || r < ql) {
             return 0;
         }
+        // if the current node is completely within the query range, return its value
         if (ql <= l && qr >= r) {
             return node->value;
         } else {
+            // otherwise, recurse down the tree to find the sum of the values in the range
+            // by looking at the left and right children
             const int middle = (l + r) / 2;
             const ll left = query(node->leftChild, l, middle, ql, qr);
             const ll right = query(node->rightChild, middle + 1, r, ql, qr);
