@@ -37,7 +37,7 @@ cmake ..
 # build the project
 make
 # run the demo
-./pst
+./pst ../../io/sample.in.# ../../io/sample.out.#
 ```
 
 ### Java
@@ -50,7 +50,8 @@ cd Implementations/Java
 # compile all sources
 javac *.java
 # run the demo
-java Main
+java Main ../io/sample.in.# ../io/sample.out.#
+```
 
 ### Python
 **Filenames:** `PST.py`, `Node.py`
@@ -59,6 +60,6 @@ java Main
 # from the repo root
 cd Implementations/Python
 # run the demo
-python3 Main.py
+python3 Main.py ../io/sample.in.# ../io/sample.out.#
 ```
 
