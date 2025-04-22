@@ -52,3 +52,13 @@ javac *.java
 # run the demo
 java Main
 
+### Python
+**Filenames:** `PST.py`, `Node.py`
+**Requirements:** Python 3+
+```bash
+# from the repo root
+cd Implementations/Python
+# run the demo
+python3 Main.py
+```
+
