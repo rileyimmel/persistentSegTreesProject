@@ -12,8 +12,8 @@ https://markfloryan.github.io/advalgo_projects/requirements.html
 
 ## Links
 1) Executive Summary: https://docs.google.com/document/d/1_NnYsMi_02FXpwYzapc8alG_G4ykaGeHsiYMpPcrwyE/edit?usp=sharing
-2) Full Slides: https://docs.google.com/presentation/d/1rqsmGgvOE-nvB8b4f0yYVAUtz_yUyGSbv85R7gykwCw/edit?usp=sharing
-3) Short Slides: https://docs.google.com/presentation/d/1VNNF17z2klea9iWyMJYRGD9ZNaUnsUmtFoAi6jujlxs/edit?usp=sharing
+2) Full Slides: https://myuva-my.sharepoint.com/:p:/r/personal/ypq8st_virginia_edu/Documents/persistentSegTrees.pptx?d=w41e035c359114248bf5a8c01e4a635e7&csf=1&web=1&e=4BYPwF
+3) Short Slides: https://myuva-my.sharepoint.com/:p:/r/personal/ypq8st_virginia_edu/Documents/persistentSegTreesPresentaion.pptx?d=w7c609d6c7df54504ba63db117a4454ad&csf=1&web=1&e=wc23b4
 
 ## Implementation
 
