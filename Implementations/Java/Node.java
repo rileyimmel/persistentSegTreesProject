@@ -1,19 +1,17 @@
-class Node {
+// node class that stores a long as well as the left and right children
+// can be updated to store other data types; would potentially require updating the merge function
+public class Node {
     long value;
-    long maximum;
-    Node leftChild, rightChild;
-
-    Node() {
+    Node leftChild;
+    Node rightChild;
+    // default constructor sets values to null
+    public Node() {
+        this.leftChild = this.rightChild = null;
         this.value = 0;
-        this.maximum = 0;
-        this.leftChild = null;
-        this.rightChild = null;
     }
-
-    Node(Node l, Node r, long v) {
-        this.leftChild = l;
-        this.rightChild = r;
-        this.value = v;
-        this.maximum = v;
+    public Node(long value, Node leftChild, Node rightChild) {
+        this.leftChild = leftChild;
+        this.rightChild = rightChild;
+        this.value = value;
     }
 }
