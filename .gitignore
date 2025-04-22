@@ -1,2 +1,6 @@
 Solution.exe
 /.idea
+/Implementations/out
+/Implementations/.idea
+/Implementations/Java/.idea
+*.iml
