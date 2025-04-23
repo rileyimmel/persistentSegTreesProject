@@ -1,3 +1,11 @@
 Solution.exe
 /.idea
 .vscode
+/Implementations/out
+/Implementations/.idea
+/Implementations/Java/.idea
+*.iml
+/Programming Assignment/Solutions/Java/.idea
+/Programming Assignment/.idea
+/Programming Assignment/Solutions/Python/__pycache__
+/Implementations/Python/__pycache__
