@@ -5,7 +5,7 @@ Solution.exe
 /Implementations/.idea
 /Implementations/Java/.idea
 *.iml
-/Programming Assignment/Solutions/Java/.idea
-/Programming Assignment/.idea
-/Programming Assignment/Solutions/Python/__pycache__
+/programmingAssignment/Solutions/Java/.idea
+/programmingAssignment/.idea
+/programmingAssignment/Solutions/Python/__pycache__
 /Implementations/Python/__pycache__
