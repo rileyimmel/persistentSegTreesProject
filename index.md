@@ -1,4 +1,4 @@
-Project 00 - Coin Change
+Project 06 - Persistent Segment Trees
 ===============================
 
 Go [back to home page](../../index.html)
@@ -7,7 +7,7 @@ Go [back to home page](../../index.html)
 <a name="overview"></a>Executive Summary
 ---------------------------------------
 
-- [Executive Summary](./executiveSummary.pdf)
+- [Executive Summary](./paper.pdf)
 
 <a name="overview"></a>Implementation
 ---------------------------------------
