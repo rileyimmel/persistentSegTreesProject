@@ -9,3 +9,4 @@ Solution.exe
 /programmingAssignment/.idea
 /programmingAssignment/Solutions/Python/__pycache__
 /Implementations/Python/__pycache__
+.DS_Store
