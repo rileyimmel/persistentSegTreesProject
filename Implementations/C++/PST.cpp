@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 // max number of versions, can be made larger or smaller. each update creates a new version
@@ -133,117 +134,72 @@ public:
     }
 };
 
-int main(){
-    // ——— Example Case 0 (original) ———
-    cout << "\033[1;33m=== Starting Example Case 0 ===\033[0m" << endl;
-    ll a[] = {1, 2, 3, 4, 5};
-    PST S1(5);
-    S1.construct(a);
-    // version 0 in red
-    cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{1, 2, 3, 4, 5}\033[0m" << endl;
-    cout << "Querying \033[1;31mversion 0\033[0m on range \033[1;31m[1..2]\033[0m gives: \033[1;31m"
-         << S1.query(0,1,2) << "\033[0m" << endl;
-    // update → version 1 in blue
-    cout << "\033[1;36mApplying update: index = 1, new value = 5\033[0m" << endl;
-    S1.update(1, 5);
-    cout << "The tree at \033[1;34mversion 1\033[0m is storing: \033[1;34m{1, 5, 3, 4, 5}\033[0m" << endl;
-    cout << "Querying \033[1;34mversion 1\033[0m on range \033[1;34m[1..2]\033[0m gives: \033[1;34m"
-         << S1.query(1,1,2) << "\033[0m" << endl << endl;
+int main(int argc, char* argv[]) {
+    if (argc != 3) {
+        cerr << "Usage: " << argv[0] << " <input.in> <expected.out>\n";
+        return 1;
+    }
 
-    // ——— Example Case 1 — all zeros, then update at the end ———
-    cout << "\033[1;33m=== Starting Example Case 1 | All zeros, update at the end ===\033[0m" << endl;
-    ll b[] = {0, 0, 0, 0};
-    PST S2(4);
-    S2.construct(b);
-    // version 0 in red
-    cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{0, 0, 0, 0}\033[0m" << endl;
-    cout << "Querying \033[1;31mversion 0\033[0m on range \033[1;31m[0..3]\033[0m gives: \033[1;31m"
-         << S2.query(0,0,3) << "\033[0m" << endl;
-    // update → version 1 in blue
-    cout << "\033[1;36mApplying update: index = 3, new value = 7\033[0m" << endl;
-    S2.update(3, 7);
-    cout << "The tree at \033[1;34mversion 1\033[0m is storing: \033[1;34m{0, 0, 0, 7}\033[0m" << endl;
-    cout << "Querying \033[1;34mversion 1\033[0m on range \033[1;34m[2..3]\033[0m gives: \033[1;34m"
-         << S2.query(1,2,3) << "\033[0m" << endl << endl;
+    ifstream fin(argv[1]);
+    ifstream fout(argv[2]);
+    if (!fin.is_open() || !fout.is_open()) {
+        cerr << "Error: could not open input or expected file\n";
+        return 1;
+    }
 
-    // ——— Example Case 2 — mix of positives & negatives ———
-    cout << "\033[1;33m=== Starting Example Case 2 | Positives & Negatives ===\033[0m" << endl;
-    ll d[] = {1, -1, 2, -2, 3};
-    PST S4(5);
-    S4.construct(d);
-    // version 0 in red
-    cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{1, -1, 2, -2, 3}\033[0m" << endl;
-    cout << "Querying \033[1;31mversion 0\033[0m on range \033[1;31m[0..4]\033[0m gives: \033[1;31m"
-         << S4.query(0,0,4) << "\033[0m" << endl;
-    // update → version 1 in blue
-    cout << "\033[1;36mApplying update: index = 1, new value = 5\033[0m" << endl;
-    S4.update(1, 5);
-    cout << "The tree at \033[1;34mversion 1\033[0m is storing: \033[1;34m{1, 5, 2, -2, 3}\033[0m" << endl;
-    cout << "Querying \033[1;34mversion 1\033[0m on range \033[1;34m[0..2]\033[0m gives: \033[1;34m"
-         << S4.query(1,0,2) << "\033[0m" << endl << endl;
+    int n, m;
+    fin >> n >> m;
+    vector<ll> arr(n);
+    for (int i = 0; i < n; i++) {
+        fin >> arr[i];
+    }
 
-    // ——— Example Case 3 — four versions in one test ———
-    cout << "\033[1;33m=== Starting Example Case 3 | A tree with 4 versions ===\033[0m" << endl;
-    ll e[] = {10, 20, 30, 40};
-    PST S5(4);
-    S5.construct(e);
-    // version 0 in red
-    cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{10, 20, 30, 40}\033[0m" << endl;
-    cout << "Querying \033[1;31mversion 0\033[0m on range \033[1;31m[1..2]\033[0m gives: \033[1;31m"
-         << S5.query(0,1,2) << "\033[0m" << endl;
-    // version 1 in blue
-    cout << "\033[1;36mApplying update: index = 0, new value = 100\033[0m" << endl;
-    S5.update(0, 100);
-    cout << "The tree at \033[1;34mversion 1\033[0m is storing: \033[1;34m{100, 20, 30, 40}\033[0m" << endl;
-    cout << "Querying \033[1;34mversion 1\033[0m on range \033[1;34m[0..1]\033[0m gives: \033[1;34m"
-         << S5.query(1,0,1) << "\033[0m" << endl;
-    // version 2 in green
-    cout << "\033[1;36mApplying update: index = 3, new value = 5\033[0m" << endl;
-    S5.update(3, 5);
-    cout << "The tree at \033[1;32mversion 2\033[0m is storing: \033[1;32m{100, 20, 30, 5}\033[0m" << endl;
-    cout << "Querying \033[1;32mversion 2\033[0m on range \033[1;32m[2..3]\033[0m gives: \033[1;32m"
-         << S5.query(2,2,3) << "\033[0m" << endl;
-    // version 3 in magenta
-    cout << "\033[1;36mApplying update: index = 1, new value = 50\033[0m" << endl;
-    S5.update(1, 50);
-    cout << "The tree at \033[1;35mversion 3\033[0m is storing: \033[1;35m{100, 50, 30, 5}\033[0m" << endl;
-    cout << "Querying \033[1;35mversion 3\033[0m on range \033[1;35m[0..3]\033[0m gives: \033[1;35m"
-         << S5.query(3,0,3) << "\033[0m" << endl << endl;
+    PST pst(n);
+    pst.construct(arr.data());
 
-    // ——— Example Case 4 — past vs. successor version queries ———
-    cout << "\033[1;33m=== Starting Example Case 4 | Querying a past version ===\033[0m" << endl;
-    ll f[] = {2, 4, 6, 8, 10};
-    PST S6(5);
-    S6.construct(f);
-    // version 0 in red
-    cout << "The tree at \033[1;31mversion 0\033[0m is storing: \033[1;31m{2, 4, 6, 8, 10}\033[0m" << endl;
-    cout << "Querying \033[1;31mversion 0\033[0m on range \033[1;31m[1..4]\033[0m gives: \033[1;31m"
-         << S6.query(0,1,4) << "\033[0m" << endl;
+    vector<ll> results;
+    for (int i = 0; i < m; i++) {
+        string cmd;
+        fin >> cmd;
+        if (cmd == "update") {
+            int idx; ll x;
+            fin >> idx >> x;
+            pst.update(idx, x);
+        } else if (cmd == "query") {
+            int ver, l, r;
+            fin >> ver >> l >> r;
+            results.push_back(pst.query(ver, l, r));
+        }
+    }
 
-    // version 1 in blue
-    cout << "\033[1;36mApplying update: index = 2, new value = 12\033[0m" << endl;
-    S6.update(2, 12);
-    cout << "The tree at \033[1;34mversion 1\033[0m is storing: \033[1;34m{2, 4, 12, 8, 10}\033[0m" << endl;
-    cout << "Querying \033[1;34mversion 1\033[0m on range \033[1;34m[1..4]\033[0m gives: \033[1;34m"
-         << S6.query(1,1,4) << "\033[0m" << endl;
+    vector<ll> expected;
+    ll v;
+    while (fout >> v) {
+        expected.push_back(v);
+    }
 
-    // version 2 in green
-    cout << "\033[1;36mApplying update: index = 4, new value = 0\033[0m" << endl;
-    S6.update(4, 0);
-    cout << "The tree at \033[1;32mversion 2\033[0m is storing: \033[1;32m{2, 4, 12, 8, 0}\033[0m" << endl;
-    cout << "Querying \033[1;32mversion 2\033[0m on range \033[1;32m[1..4]\033[0m gives: \033[1;32m"
-         << S6.query(2,1,4) << "\033[0m" << endl;
+    bool all_pass = (results.size() == expected.size());
+    if (!all_pass) {
+        cerr << "Mismatch in number of results: got "
+             << results.size() << ", expected "
+             << expected.size() << "\n";
+    }
 
-    // version 3 in magenta
-    cout << "\033[1;36mApplying update: index = 3, new value = 16\033[0m" << endl;
-    S6.update(3, 16);
-    cout << "The tree at \033[1;35mversion 3\033[0m is storing: \033[1;35m{2, 4, 12, 16, 0}\033[0m" << endl;
-    cout << "Querying \033[1;35mversion 3\033[0m on range \033[1;35m[1..4]\033[0m gives: \033[1;35m"
-         << S6.query(3,1,4) << "\033[0m" << endl;
+    size_t tests = min(results.size(), expected.size());
+    for (size_t i = 0; i < tests; i++) {
+        bool match = (results[i] == expected[i]);
+        cout << "Test " << i << ":\n"
+             << "  Actual:   " << results[i] << "\n"
+             << "  Expected: " << expected[i] << "\n"
+             << "  Match:    " << (match ? "YES" : "NO") << "\n\n";
+        if (!match) all_pass = false;
+    }
 
-    // revisit an earlier version after further updates
-    cout << "\033[1;36mRe-querying past version:\033[0m" << endl;
-    cout << "Even after later updates, querying \033[1;34mversion 1\033[0m on range \033[1;34m[1..4]\033[0m still gives: \033[1;34m"
-         << S6.query(1,1,4) << "\033[0m" << endl;
-    return 0;
+    if (all_pass) {
+        cout << "All tests passed!\n";
+        return 0;
+    } else {
+        cout << "Some tests failed.\n";
+        return 1;
+    }
 }
